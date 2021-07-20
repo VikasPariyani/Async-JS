@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Dog photos fetch</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0
+        }
+        body{
+            display: flex;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            font-family: Candara,sans-serif;
+            color: white;
+            background: #282828;
+        }
+        nav{
+            display: flex;
+            padding: 1em 2em;
+            width: 100%;
+            background: #cc0000;
+            justify-content: space-between;
+        }
+        select{
+            appearance: none;
+            border-radius: 10px;
+            border: none;
+            padding: 10px;
+            outline: none;
+            text-transform: uppercase;
+        }
+        option{
+            text-transform: uppercase;
+            
+        }
+        option:nth-child(even){
+            background: rgba(112, 103, 103, 0.486);
+            
+        }
+        button{
+            border: none;
+            background: #3741ca;
+            padding: 1em 2em;
+            margin: 1em 0;
+            border-radius: 10px;
+            color: white;
+        }
+        
+        .img-container{
+            margin: 10px;
+            height: 60vh;
+            overflow: hidden; 
+            display: grid;
+            place-items: center;       
+        }
+        @keyframes spin {
+            to{
+                transform: rotateZ(360deg)
+            }    
+        }
+
+        img{
+            object-fit: cover;
+            max-height:60vh;
+            display: none;
+        }
+
+        .spinner{
+            font-size: 70px;
+            animation: 2s spin ease-in-out infinite;
+            display: none;
+
+        }
+        .show{
+            display: block
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Dogssss 🐶</h1>
+        <select class='breeds'></select>
+    </nav>
+    <div class="img-container">
+        <img id='doggo-img' class='show' src="http://placecorgi.com/480" alt="A Doggo">
+        <div class="spinner">🐶</div> 
+    </div>
+    <button id='addDoggo' title="Select any Dog Category ↗">Add Doggo</button>
+     
+    <script src="./doggos.js"></script>
+</body>
+</html>
+

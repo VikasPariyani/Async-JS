@@ -40,11 +40,12 @@ img.addEventListener('load',()=>{
 })
 
 select.addEventListener('change', e=>{
-// console.log(e.target.value)
+    // The url will only change when there is change in selection 
+    // else it will remain to default
     url = `https://dog.ceo/api/breed/${e.target.value}/images/random`
-
     getDoggo(url)
 })
+
 btn.addEventListener('click',()=>{ 
     getDoggo(url)
 })

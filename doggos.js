@@ -46,7 +46,7 @@ img.addEventListener('load',()=>{
 })
 
 btn.addEventListener('click',()=>{
-    let breed = $('.breeds')[0].value
+    let breed = document.querySelector('.breeds')[0].value
     let url = `https://dog.ceo/api/breed/${breed}/images/random`
     getDoggo(url)
 })

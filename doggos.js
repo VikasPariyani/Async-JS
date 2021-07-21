@@ -22,7 +22,7 @@ fetch(DOGGOBREEDS_URL)
 select.addEventListener('change', e=>{
     // console.log(e.target.value)
     
-    url = `https://dog.ceo/api/breed/${e.target.value}/images/random`
+    let url = `https://dog.ceo/api/breed/${e.target.value}/images/random`
 
     getDoggo(url)
 })
@@ -46,6 +46,8 @@ img.addEventListener('load',()=>{
 })
 
 btn.addEventListener('click',()=>{
+    let breed = $('.breeds')[0].value
+    let url = `https://dog.ceo/api/breed/${breed}/images/random`
     getDoggo(url)
 })
 

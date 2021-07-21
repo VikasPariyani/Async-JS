@@ -3,6 +3,7 @@
 const DOGGOBREEDS_URL = 'https://dog.ceo/api/breeds/list/all'
 const select = document.querySelector('.breeds')
 const btn = document.querySelector('#addDoggo')
+let url = 'https://dog.ceo/api/breeds/image/random' 
 
 
 fetch(DOGGOBREEDS_URL)
@@ -19,13 +20,6 @@ fetch(DOGGOBREEDS_URL)
     }
 })
 
-select.addEventListener('change', e=>{
-    // console.log(e.target.value)
-    
-    let url = `https://dog.ceo/api/breed/${e.target.value}/images/random`
-
-    getDoggo(url)
-})
 
 const img = document.querySelector('#doggo-img')
 const spinner = document.querySelector('.spinner')
@@ -45,9 +39,13 @@ img.addEventListener('load',()=>{
     img.classList.add('show')
 })
 
-btn.addEventListener('click',()=>{
-    let breed = document.querySelector('.breeds')[0].value
-    let url = `https://dog.ceo/api/breed/${breed}/images/random`
+select.addEventListener('change', e=>{
+// console.log(e.target.value)
+    url = `https://dog.ceo/api/breed/${e.target.value}/images/random`
+
+    getDoggo(url)
+})
+btn.addEventListener('click',()=>{ 
     getDoggo(url)
 })
 
